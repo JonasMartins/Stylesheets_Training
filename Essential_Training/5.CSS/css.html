@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- css.html by Bill Weinman http://bw.org/ -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /> 
+    <title>
+        Style Sheets
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <!-- Todos os elementos terão as configurações
+    descritas nesses estilos -->
+    
+    <!-- p#p1 é o indice, id selector obs: só vale 
+    para paragrafos como tem o elemento p na frente
+    se for descrito sem o p, pode ser linkado a qq
+    tipo de elemento da página-->
+    <style>
+        p {
+            line-height: 140%;
+        } 
+        a{
+            font-family: sans-serif;
+        }
+        .foo{
+            font-family: monospace;
+        }
+        p#p1{
+            font-family: monospace;
+            font-size: 20pt;
+        }   
+    </style>
+</head>
+<body>
+<div style="color: #933;">
+<h1>
+    Style Sheets
+</h1>
+<p style="font-family: monospace;">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Pellentesque sit amet lorem ligula. Nam pulvinar nunc ac magna
+    aliquam quis sodales dui elementum. Fusce a lacus leo. Maecenas ut
+    dui eu quam condimentum sagittis. Morbi aliquam auctor facilisis. Ut
+    urna ligula, lobortis vitae porta ut, auctor id eros. Vestibulum
+    luctus malesuada tortor nec fermentum. Suspendisse potenti. Proin
+    sapien nisl, lobortis varius eleifend vitae, pretium mattis leo.
+    Donec eu nisi turpis, sit amet rutrum leo. Cras volutpat metus quis
+    ipsum blandit sed laoreet odio pharetra.
+</p>
+</div>
+<p class="foo">
+    Sed tincidunt, tellus et ultricies lacinia, ipsum magna laoreet
+    velit, iaculis mattis quam ante vitae tellus. Aliquam lacinia, lacus
+    vel <span style="color: #933">gravida</span> tristique, massa velit suscipit mauris, non sagittis
+    diam tellus in dui. Morbi ultrices turpis nec ipsum ultrices in
+    scelerisque sapien tempor. Sed aliquet sollicitudin lacus sed
+    dignissim. Maecenas convallis consectetur enim, id lobortis mauris
+    rhoncus at. Phasellus malesuada porttitor lorem, ac facilisis ligula
+    tincidunt sed. Fusce adipiscing, nunc nec luctus lacinia, quam odio
+    malesuada velit, ut placerat augue elit et nisl. Sed aliquam
+    pharetra libero, id lobortis velit faucibus a. Duis at fringilla
+    ipsum.
+</p>
+<!-- Aplicando o id selector-->
+<p id="p1">
+    Pellentesque habitant morbi tristique senectus et netus et malesuada
+    fames ac turpis egestas. Vivamus laoreet placerat ipsum ac congue.
+    In hac habitasse platea dictumst. Sed molestie ullamcorper diam
+    rutrum elementum. Curabitur sagittis gravida dolor id tincidunt. In
+    posuere dui in justo consequat nec ullamcorper urna placerat.
+    Suspendisse diam velit, volutpat et commodo ut, ornare vel felis.
+    Maecenas aliquet pulvinar elit, lacinia faucibus metus imperdiet
+    non. Donec vel sem a est bibendum convallis id vitae nisl.
+    Suspendisse nec enim nulla. Morbi justo urna, sagittis quis lacinia
+    at, venenatis a magna. Mauris id ultrices nunc. In dui elit,
+    ultrices a sagittis sit amet, consectetur in neque. Nunc viverra
+    volutpat orci, et adipiscing augue fermentum ut. Ut sollicitudin
+    molestie interdum. Curabitur non risus arcu. </p>
+</p>
+
+</body>
+</html>
