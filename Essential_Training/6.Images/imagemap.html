@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- imagemap.html by Bill Weinman http://bw.org/contact/ -->
+
+<html lang='en'>
+<head>
+    <meta charset="UTF-8" /> 
+    <title>
+        HTML Image Map
+    </title>
+</head>
+<body>
+
+<h1>
+    HTML Image Map
+</h1>
+
+<img src="images/scissors-imagemap.png" width="240" height="240" 
+    alt="Picture of scissors" TITLE="Running with these is not recommended." 
+    usemap="#scissorsmap" />
+
+<!-- Mapeando a imagem para que em diferente partes da
+imagem tenhamos diferentes tipos de titulos, ou tags
+quando posicionamos o cursor sobre essas áreas 
+
+Tudo isso feito pela tag map, descrita abaixo
+-->
+<map name="scissorsmap">
+
+<!-- Notar que o retangulo começa no 0,0, ou seja no canto
+superior esquerdo da imagem e tem 50 pixels de altura e de
+largura que serverm para demostrar as dimensões dessa image
+que foi previamente destacada pela área roxa.
+
+o circulo envolve o raio como 3 argumento e os dois
+primeiros a sua origem, já o poligono vai marcando elementos
+x,y, ou seja as suas coordenadas, porem devem estar em sequencia
+-->
+<area shape="rect" coords="0, 0, 50, 50" alt="rect" title="rectangular area" href="rectangle.htm" />
+<area shape="circle" coords="150, 25, 25" alt="circle" title="circular area" href="circle.htm" />
+<area shape="poly"
+    coords="13, 93, 101, 114, 148, 106, 193, 88, 233, 111, 220, 129,
+        140, 134, 191, 163, 203, 187, 193, 202, 173, 208, 148, 181, 99,
+        137, 5, 130, 68, 120"
+    alt="poly" title="poly area for scissors" href="scissors.htm" />
+</map>
+
+</body>
+</html>
