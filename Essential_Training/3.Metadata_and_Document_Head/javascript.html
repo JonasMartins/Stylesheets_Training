@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- javascript.html by Bill Weinman http://bw.org/contact/ -->
+
+<html>
+<head>
+    <title>
+        Javascript Example
+    </title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <!-- Fazer um cronometro no meio da tela-->
+    <!-- 
+    Forma menos comum de fazer, deixando direto dentro
+    do html
+
+    <script type="text/javascript">
+        function init() {
+            var n = 0;
+            e = document.getElementById("output");
+            setInterval(function() { e.innerHTML = ++n; }, 1000);
+        }
+        window.onload = init;
+    </script>
+    -->
+
+    <!-- forma mais correta de fazer: pegando de um
+    arquivo de fora: -->
+    <script type="text/javascript" src="count.js"></script>
+    <style>
+        #output {
+            color: #900;
+            background-color: gray;
+            border: solid black 3px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>
+    Javascript Example
+</h1>
+
+<h2>
+    The count is: <span id="output">0</span>
+</h2>
+
+</body>
+</html>
