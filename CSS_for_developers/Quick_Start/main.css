@@ -3,6 +3,9 @@
     Copyright (c) 2010 The BearHeart Group, LLC
 */
 
+/* IMPORTANTE CRIAR O CSS BÁSICO PADRÃO DE TODA
+A APLICAÇÃO */
+
 body {
     background-color: white;
     margin: 5px;
@@ -14,4 +17,28 @@ div#content {
     margin: 0 auto;
     padding: 10px;
     border: 1px solid #ccc;
+}
+
+p{
+	/* Siginificado:
+	0 margem de cima 0;
+	0 margem direita de 0;
+	1em é a margem de baixo, botton
+
+	(padrão)
+	1em significa: tamanho da fonte
+
+	0 para a margem da esquerda 
+	
+	*/
+	margin: 0 0 .75em 0;
+}
+h1, h2, h3, h4, h5, h6{
+	margin: 0 0 .5em 0;
+	font-family: monaco; /* custon font header */
+}
+
+/* Classe selectors */
+.blue{
+	color: #669;
 }
