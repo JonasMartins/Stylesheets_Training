@@ -82,3 +82,23 @@ a:hover {
     color: red;
     text-decoration: underline;
 }
+
+
+div.sidebar{
+    width: 200px;
+    float: right;
+    background-color: #ffc;
+    border: 1px solid #c99;
+    padding: 5px; 
+}
+/* Isso serve para os paragrafos decendentes
+do sidebar, sempre que tiver um parágrafo
+dentro de um sidebar id, teremos essa coloração*/
+div.sidebar p {
+    color: #006;
+}
+/* Seleciona tudo do tipo input com do campo text
+e deixa sempre com essa largura*/
+input[type="text"]{
+    width: 175px;
+}
