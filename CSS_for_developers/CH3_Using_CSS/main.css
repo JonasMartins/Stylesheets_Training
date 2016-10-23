@@ -1,6 +1,24 @@
 /*
     main.css by Bill Weinman - http://bw.org/contact/
     Copyright (c) 2010 The BearHeart Group, LLC
+
+breve tutorial:
+
+* div#content é o selector, e significa
+que esse estilo vai ser aplicado ao um div
+que use a classe content 
+
+* background-color é a propriedade, indica
+qual propriedade vai ser alterada com esse estilo
+
+então, o bloco div com a classe content
+vai ter um background de cor branca
+
+* white é o value, valor da propriedade
+div#content{
+    background-color: white;
+}
+
 */
 
 
@@ -27,6 +45,12 @@ p {
     margin: 0 0 0.75em 0;
     line-height: 1.5em;
 }
+
+p.first:first-line{
+    font-variant: small-caps;
+}
+
+
 /* Fazendo um sidebar dica: 25% de largura */
 #sidebar{
     float: right; /* indo para o lado direito*/
@@ -40,5 +64,21 @@ p {
     background-color: #ffc;
     border: 1px solid #f99;
     padding:  1px 3px; /* 1px em cima e baixo, 3
-    na esquerda, e 3 na direita */
+    na esquerda, e 3 na direita  */
+}
+/* Pseudo selectors */
+
+a{
+    text-decoration: none;
+}
+
+a:visited {
+    color:purple;
+}
+a:link {
+    color:green;
+}
+a:hover {
+    color: red;
+    text-decoration: underline;
 }
