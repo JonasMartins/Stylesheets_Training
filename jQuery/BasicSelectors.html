@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>Document</title>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    $("document").ready(function() {
+    	/**
+    	 * Usando os selectors de jQuery
+    	 *
+    	 * Essa função seleciona todas as tags
+    	 * p da página, e coloca atarvez da função
+    	 * de css e põe uma borda vermelha em volta
+    	 * dessa tags
+    	 */
+    	$("p").css("border","3px solid red");
+    	/**
+    	 * Agora para todos os elementos
+    	 * que usam a classe="a", isso vai sobrescrever
+    	 * um dos parágrafos vermelhos
+    	 */
+    	$(".a").css("border","3px solid green");
+    	// o mesmo para o id="list"
+    	$("#list1").css("border","3px solid blue");
+    	// usando uma combinação agora
+    	// todos os parágrafos com uma classe b
+    	// assinalada a ela
+    	$("p.b").css("border","3px solid pink");
+    });
+</script>
+<style type="text/css">
+.a { color: Navy; }
+.b { color: Maroon; }
+</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+<p class="a">This is paragraph 1</p>
+<p>This is paragraph 2</p>
+<p class="b">This is paragraph 3</p>
+<p>This is paragraph 4</p>
+</body>
+</html>
