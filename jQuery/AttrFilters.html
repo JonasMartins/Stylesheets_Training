@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>Document</title>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    $("document").ready(function() {
+	/**
+	 * 	> Selecionar todos os paragrafos com o atributo classe 	
+	 *	$("p[class]").css("border","3px solid black");
+	 *
+	 * 	> Seleciona os paragrafos com o id indicado
+	 *	$("p[id=para1]").css("border","3px solid black");
+	 *
+	 *	> Seleciona os paragrafos que começam com o id indicado
+	 * 	$("p[id^=para]").css("border","3px solid black");
+	 *
+	 * 	> Paragrafos que começam com o para e contem o atributo lang
+	 * 	que "contem" a string en- em seu valor associado
+	 * 	$("p[id^=para] [lang*=en-]").css("border","3px solid black");
+	 */
+
+    });
+</script>
+<style type="text/css">
+.a { color: Navy; }
+.b { color: Maroon; }
+</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+<p class="a">This is paragraph 1</p>
+<p id="para1">This is paragraph 2</p>
+<p class="b">This is paragraph 3</p>
+<p id="para4" lang="en-us">This is paragraph 4</p>
+</body>
+</html>
