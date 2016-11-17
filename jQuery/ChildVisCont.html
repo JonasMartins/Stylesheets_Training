@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>Using Child, Visibility, and Content Filters</title>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    $("document").ready(function() {
+  	/**
+  	 * 	> Selecione os paragrafos que contém a string
+  	 * 	dentro de seu texto
+  	 * 	$("p:contains(3)").css("border:","3px solid red");
+  	 *
+  	 * 	> Selecione qq elemento que contém o texto em string "3"
+  	 * 	Obs: todos os filhos dos elementos serão afetados
+  	 * 	da mesma forma os pais desses elementos
+  	 *	$(":contains(3)").css("border:","3px solid red"); 
+  	 *
+  	 * 	> todos os elementos que contém outra tag
+  	 * 	$("p:parent").css("border:","3px solid red");
+  	 *
+  	 *
+  	 *	> Selecione todo ul com um li dentro e esse li tem uma classe
+  	 *	do tipo a.
+  	 *	$("ul:has(li[class=a])").css("border:","3px solid red");
+  	 *
+  	 *	> Seleciona o li dentro de um ul coju numero seja 3
+  	 *	ou seja é o terceiro filho desse ul
+  	 *	$("ul li:nth-child(3)").css("border:","3px solid red");
+  	 *
+  	 * 	> Último filho
+  	 *	$("ul li:last-child").css("border:","3px solid red");
+  	 *
+  	 *	> Começa a contar de 1 e vai selecionando de 2 em 2
+  	 *	de acordo com o numero passado como passo a ser pulado
+  	 *	$("ul li:nth-child(2n)").css("border:","3px solid red");
+  	 * 
+  	 * 
+  	 */
+    });
+</script>
+<style type="text/css">
+.a { color: Navy; }
+.b { color: Maroon; }
+</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+<p class="a">This is paragraph 1</p>
+<p id="para1">This is paragraph 2</p>
+<p class="b">This is paragraph 3</p>
+<p>This is paragraph 4</p>
+</body>
+</html>
