@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>Document</title>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+    $("document").ready(function() {
+    	// encontrar o primeiro paragrafo e põe uma borda em volta
+    	//$("p:first").css("border","3px solid black");
+    	//$("p:last").css("border","3px solid black");
+    	// par e impar, começando do 0
+    	//$("p:even").css("border","3px solid black");
+    	//$("p:odd").css("border","3px solid black");
+  	
+  	/**
+  	 * Infinitas possibilidades.....
+  	 * @type {[type]}
+  	 * clases b e a com os filtros indicados
+  	 * 
+  	 * > Cada paragrafo com indice maior que 1
+  	 * $("p:gt(1)").css("border","3px solid black");
+  	 *
+  	 * > Paragrafos que tem indice não igual a 2
+  	 * $("p:not(p:eq(2))").css("border","3px solid black");
+  	 * 
+  	 */
+  		$(".a:first").css("border","3px solid black");
+  		$(".b:even").css("border","3px solid black");
+  
+    });
+</script>
+<style type="text/css">
+.a { color: Navy; }
+.b { color: Maroon; }
+</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+<p class="a">This is paragraph 1</p>
+<p>This is paragraph 2</p>
+<p class="b">This is paragraph 3</p>
+<p>This is paragraph 4</p>
+</body>
+</html>
