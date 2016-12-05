@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>Document</title>
+<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+		/* Mostrando o poder de algumas funções padrão do
+		jquery, nesse caso contando a quantidade de elementos
+		do tipo p, udando a função que procura esses elementos
+		na página, podemos usar também size ao inves de length
+		o que produz a mesma coisa
+    
+    $("document").ready(function() {
+    	alert("There are " + $("p").length + " <p> elements."); 
+		*/
+    
+    /* Pegando todos os DOM elements do tipo li
+    nessa página, OBS elements é um array com
+    esses objetos */
+   $("document").ready(function() {
+   	/*
+    var elements = $('li').get();
+    alert(" there are " + elements.length + " <li> tags.");
+ 		*/
+ 	
+ 		//alert($('li').get(0)); retorna o tipo de elemento
+ 		//na posição 0 
+
+ 		/*Encontrar todos os li elements que tem
+ 		uma classe b aplicado a eles serão destacados
+ 		usando css, detro de ul, esse primeiro argumento 
+ 		serve para demostrar que deve ser procurado dentro
+ 		desse cara. */
+ 		$("ul").find("li.b").css("border", "3px solid red");
+
+ 		 var leftmargin = 0;
+ 		 var border = 3;
+ 		 /* Para cada parágrafo execute 
+ 		 uma função, */
+ 		 $("p").each(function(){
+ 		 	// this se refere a cada paragrafo
+ 		 	// a borda vai ficar maior a cada iteração
+ 		 	$(this).css("border", border+"px solid blue");
+ 		 	// vai aumentando a identação também
+ 		 	// e atualiza as variáveis, apenas
+ 		 	// para mostrar o poder da função each
+ 		 	$(this).css("margin-left", leftmargin);
+ 		 	border += 2;
+ 		 	leftmargin += 10;
+ 		 });
+    });
+</script>
+<style type="text/css">
+.a { color: Navy; }
+.b { color: Maroon; }
+</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+<p class="a">This is paragraph 1</p>
+<p id="para1">This is paragraph 2</p>
+<p class="b">This is paragraph 3</p>
+<p id="para2">This is paragraph 4</p>
+</body>
+</html>
