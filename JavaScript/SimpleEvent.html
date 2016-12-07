@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Event Example</title>
+<script type="text/javascript">
+
+function addEventHandler(oNode, evt, oFunc, bCaptures){
+	if (typeof(window.event) != "undefined")
+		oNode.attachEvent("on"+evt, oFunc);
+	else
+		oNode.addEventListener(evt, oFunc, bCaptures);
+}
+function onLinkClicked(e){
+	alert("You clicked the link");
+}
+
+/* A função que chamada quando a janela é carregada
+*/
+function setUpClickEvent(e){
+	addEventHandler(document.getElementById('clickLink'),"click", 
+		onLinkClicked, false);
+}
+	
+	/*Objeto window e que aconteça no evento load 
+	cuja função tem nome: setUpClickEvent */
+	addEventHandler(window, "load", setUpClickEvent, false);
+</script>
+</head>
+
+<body>
+	<a href="#" title="click me" id="clickLink">Click Me!</a>
+</body>
+</html>
