@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attributes</title>
+<script type="text/javascript" src="../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	
+	$("document").ready(function(){
+
+		/* Pegando todos os elementos link, da página 
+		para target para serem _blank
+		o que faz com que ao clicar no link seja
+		aberto em outra janela 
+
+		$("a").attr("target", "_blank");
+		
+		*/
+
+		/* Removendo um atributo, neste caso href de todos
+		os links e assim, os links deixarão de ser links, e 
+		neste caso apenas a imagem 
+		
+		$("a").removeAttr("href");
+
+		*/
+
+		/* Mudando o src da imagem, notar a diferença 
+		de trabalhar com objetos DOM, neste caso "src" */
+
+		$("img").attr({src:"../images/Spring.jpg", alt:"Spring"});
+
+	});
+
+</script>
+<style type="text/css">
+	img {
+    margin:20px;
+    width:400px;
+    height:400px;
+    }
+</style>
+</head>
+<body>
+<a href="images/Grass.jpg"><img src="../images/Grass.jpg" alt="image" /></a>
+</body>
+</html>

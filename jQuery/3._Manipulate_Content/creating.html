@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating content</title>
+<script type="text/javascript" src="../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	
+	$("document").ready(function(){
+		
+		/* Mostrar o conteudo do html dentro daquele 
+		seleteor especifico, neste caso, com o id=list1
+		
+		alert($("#list1").html());		
+
+		*/
+		
+		/* Todos os list items dentro do id=list1 serão
+		substituidos por esse novo item especificado aqui
+		
+		$("#list1").html(" <li>This is a new list item</li>  ");
+
+		*/
+
+		/* O conteudo de todos os elementos com esse id
+		serão mudados para o elemento da variavel newItem 
+
+		var newItem = $("<p>This is a new paragraph</p>");
+		$("#para2").html(newItem.html());
+		
+		*/
+
+		/* Trocando o conteudo do ultimo parágrafo */
+		$("p:last").text("This is the last paragraph");
+
+	});
+
+</script>
+<style type="text/css">
+	.a { color: Navy; }
+	.b { color: Maroon; }
+</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+<p class="a">This is paragraph 1</p>
+<p id="para2">This is paragraph 2</p>
+<p class="b">This is paragraph 3</p>
+<p>This is paragraph 4</p>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating content</title>
+<script type="text/javascript" src="../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	
+	$("document").ready(function(){
+
+		/* Adicionando conteudo ao final de 
+		todos os paragrafos da pagina*/
+		//$("p").append(" with some content appended");
+    
+
+
+		/* Adicionando conteudo ao inicio de 
+		todos os paragrafos da pagina*/
+    //$("p").prepend("Hello! ");
+    
+
+    /* Paga o ultimo paragrafo e appent to, ou seja
+    coloca logo após o primeiro paragrafo */
+    //$("p:last").appendTo("p:first");
+
+    /* Análogamente pega o ultimo paragrafo e poem
+    logo a frente do primeiro */
+    //$("p:last").prependTo("p:first");
+
+	});
+
+</script>
+<style type="text/css">
+	.a { color: Navy; }
+	.b { color: Maroon; }
+</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+<p class="a">This is paragraph 1</p>
+<p id="para2">This is paragraph 2</p>
+<p class="b">This is paragraph 3</p>
+<p>This is paragraph 4</p>
+</body>
+</html>
