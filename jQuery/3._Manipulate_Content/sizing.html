@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Creating content</title>
+<script type="text/javascript" src="../jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+	
+	$("document").ready(function(){
+		
+		/* EMBRULHAR DENTRO DA DIV */
+
+		/*os parágrafos sem classe serão afetados
+		por esse método wrap e vão estar com a cor red
+		no caso são: 2 e 4 paragrafos */
+		//$("p").wrap("<div style='color:red'/>");
+  
+		/* embrulhar todos os paragrafos e fazer uma
+		borda cor vermelha */
+
+    //$("p").wrapAll("<div style='border:3px solid red'/>");
+    
+
+    /* Removendo tudo dentro do ul */
+    //$("ul").empty();
+	
+
+	});
+
+</script>
+<style type="text/css">
+	.a { color: Navy; }
+	.b { color: Maroon; }
+</style>
+</head>
+<body>
+	<ul id="list1">
+		<li class="a">item 1</li>
+		<li class="a">item 2</li>
+		<li class="b">item 3</li>
+		<li class="b">item 4</li>
+	</ul>
+<p class="a">This is paragraph 1</p>
+<p id="para2">This is paragraph 2</p>
+<p class="b">This is paragraph 3</p>
+<p>This is paragraph 4</p>
+</body>
+</html>

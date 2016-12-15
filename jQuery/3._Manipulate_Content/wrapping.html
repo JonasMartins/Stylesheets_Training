@@ -6,42 +6,43 @@
 <script type="text/javascript">
 	
 	$("document").ready(function(){
-		
-		/* EMBRULHAR DENTRO DA DIV */
-
-		/*os parágrafos sem classe serão afetados
-		por esse método wrap e vão estar com a cor red
-		no caso são: 2 e 4 paragrafos */
-		//$("p").wrap("<div style='color:red'/>");
-  
-		/* embrulhar todos os paragrafos e fazer uma
-		borda cor vermelha */
-
-    //$("p").wrapAll("<div style='border:3px solid red'/>");
-    
-
-    /* Removendo tudo dentro do ul */
-    //$("ul").empty();
-	
-
-	});
-
-</script>
-<style type="text/css">
-	.a { color: Navy; }
-	.b { color: Maroon; }
-</style>
+						$("#height").html($("#theDiv").height());
+            $("#width").html($("#theDiv").width());
+            $("#innerH").html($("#theDiv").innerHeight());
+            $("#innerW").html($("#theDiv").innerWidth());
+            $("#outerH").html($("#theDiv").outerHeight());
+            $("#outerW").html($("#theDiv").outerWidth());
+            $("#offset").html($("#theDiv").offset().top + ", " + $("#theDiv").offset().left);
+            $("#position").html($("#theDiv").position().top + ", " + $("#theDiv").position().left);
+        });
+    </script>
+    <style type="text/css">
+        div#theDiv {
+            width: 250px;
+            height: 180px;
+            margin: 10px;
+            padding: 20px;
+            background: blue;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        p, span {
+            font-size: 16pt;
+        }
+    </style>
 </head>
 <body>
-	<ul id="list1">
-		<li class="a">item 1</li>
-		<li class="a">item 2</li>
-		<li class="b">item 3</li>
-		<li class="b">item 4</li>
-	</ul>
-<p class="a">This is paragraph 1</p>
-<p id="para2">This is paragraph 2</p>
-<p class="b">This is paragraph 3</p>
-<p>This is paragraph 4</p>
+	<p>
+        Using jQuery to compute element size and position</p>
+    <div id="theDiv">
+    </div>
+    <div><span>Height: </span><span id="height"></span></div>
+    <div><span>Width: </span><span id="width"></span></div>
+    <div><span>innerHeight: </span><span id="innerH"></span></div>
+    <div><span>innerWidth: </span><span id="innerW"></span></div>
+    <div><span>outerHeight: </span><span id="outerH"></span></div>
+    <div><span>outerWidth: </span><span id="outerW"></span></div>
+    <div><span>offset: </span><span id="offset"></span></div>
+    <div><span>position: </span><span id="position"></span></div>
 </body>
 </html>
