@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Carousel</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Wendy+One|Libre+Baskerville' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="mystyle.css" />
+</head>
+<body>
+
+<div id="speakerbox">
+	<a href="#", id="prev_btn">&laquo;</a>
+	<a href="#", id="next_btn">&raquo;</a>
+	<div id="carousel"></div>
+</div>
+	
+<script id="speakerstpl" type="text/template">
+	<!-- similar a html, um template da página  -->
+	{{#speakers}}<!-- Aqui o mustash vai pegar os dados do json e fazer um loop por todos os objetos  -->
+		<div class="speaker"><!-- Aqui o mustash aplica o template nesses objetos -->
+			<img src="images/{{shortname}}_tn.jpg" alt="Photo of {{name}}" />
+			<h3>{{name}}</h3>
+			<h4>{{reknown}}</h4>
+			<p>{{bio}}</p>
+		</div>
+	{{/speakers}}
+</script>
+
+	<!-- Bibliotecas necessárias para a aplicação  -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.cycle/3.0.3/jquery.cycle.all.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+$(function() {
+
+	$.getJSON('data.json', function(data) {
+		var template = $('#speakerstpl').html();
+		var html = Mustache.to_html(template, data);/*Usando de fato a biblioteca */
+		$('#carousel').html(html);/*colocando todo o conteúdo dentro do div referenciado pelo id=carousel*/
+
+
+		/*cycle library http://jquery.malsup.com/cycle/ 
+		para ver todos os efeitos possíveis: http://jquery.malsup.com/cycle/browser.html
+		*/
+		$("#carousel").cycle({
+			fx: 'fade',
+			pause: 1, /*pause vai parar a rotação se der um hover sobre o elemento principal */
+			next: '#next_btn',
+			prev: '#prev_btn',
+			speed: 500, /*velocidade da transição*/
+			timeout: 10000 /*quantidade de tempo entre as transições*/
+		});
+
+
+
+
+
+
+
+	}); //getJSON
+}); //function
+
+</script>
+
+ 
+</body>
+</html>
