@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Using the jQuery Event Object</title>
+	<script type="text/javascript" src="../jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+        $(function() {
+            $("div").one("click", function() { /* event handlers que acontecen apenas uma vez. */
+                $(this).css({ background: "red",
+                    cursor: "auto"
+                });
+            });
+        });
+    </script>
+    <style type="text/css">
+        div {
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+            float: left;
+            background: blue;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        p {
+            font-size: 18pt;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        Click on each square to change color</p>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+</body>
+</html>
