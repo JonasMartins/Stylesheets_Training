@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Striping/Hover Highlighting a Table</title>
+	<script type="text/javascript" src="../jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+        $(function() {
+          /* pegando a tabela, os elementos do tipo tr e filtrando os pares
+          desses elementos e adicionando a classe, no caso a cor da listra1
+          análogo no outro porem com as tuplas impares */    
+          $("#theList tr:even").addClass("stripe1");
+          $("#theList tr:odd").addClass("stripe2");
+
+          /* hover function recebe dois argumentos uma função para
+          quando o ponteiro do mouse passa por cima e outr quando o 
+          ponteiro do mouse sai*/
+          $("#theList tr").hover(
+              function() {
+                  $(this).toggleClass("highlight");
+                  /*este this será a tupla atual, ou seja, a
+                  tupla cujo ponteiro do mouse está passando por cima*/
+              },
+              function() {
+                  $(this).toggleClass("highlight");
+              }
+          );
+          /* EVENT BUBBLING*/
+          /* DELEGAÇÃO DE EVENTOS: Significa apenas manipule eventos
+          que vem de tuplas de tabelas 
+          
+          Se fosse feito assim: teria vários listners o que seria desnecessário
+          de se fazer.
+
+          $("#theList tr").on("click", function showText (evt) {
+            alert($(this).text());
+          })
+
+          DA FORMA CORRETA TRÁS UMA ENORME DIFERENÇA POIS ASSIM TEMOS 
+          APENAS UM HANDLER AO INVÉS DE UM PARA CADA TUPLA DA TABELA COM
+          ESTÁ IMPLEMENTADO ACIMA. 
+          */
+       
+          /* um alerta com o texto da tupla ao ser clicado */
+          $("#theList").on("click", "tr", function showText (evt) {
+            alert($(this).text());
+          })
+      });
+    </script>
+<style type="text/css">
+th,td {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #000000;
+}
+tr {
+    border: 1px solid gray;
+}
+td {
+    width:200px;
+    padding:3px;
+}
+th {
+    background-color:#D2E0E8;
+    color:#003366
+}
+table {
+    border: 1pt solid gray;
+}
+.clickable {
+    cursor:pointer;
+}
+.stripe1 {
+    background-color: #0f0;
+}
+.stripe2 {
+    background-color: #afa;
+}
+.highlight {
+    background-color: #ffcc00;
+    font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>Using jQuery to stripe and hover-highlight a table</h1>
+<table id="theList">
+    <thead>
+    <tr>
+      <th>Item</th>
+      <th>Price</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <td>Milk</td>
+      <td>1.99</td>
+  </tr>
+  <tr>
+      <td>Eggs</td>
+      <td>2.29</td>
+  </tr>
+  <tr>
+      <td>Butter</td>
+      <td>3.49</td>
+  </tr>
+  <tr>
+      <td>Bread</td>
+      <td>0.99</td>
+  </tr>
+  <tr>
+      <td>Pasta</td>
+      <td>1.19</td>
+  </tr>
+  <tr>
+      <td>Honey</td>
+      <td>4.39</td>
+  </tr>
+  <tr>
+      <td>Cookies</td>
+      <td>2.99</td>
+  </tr>
+  <tr>
+      <td>Apples</td>
+      <td>0.59</td>
+  </tr>
+  <tr>
+      <td>Sugar</td>
+      <td>1.78</td>
+  </tr>
+  <tr>
+      <td>Pepper</td>
+      <td>1.56</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
