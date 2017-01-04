@@ -1,0 +1,62 @@
+    <!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Image Rotator</title>
+	<script type="text/javascript" src="../jquery-3.1.1.min.js"></script>
+	<script type="text/javascript">
+   $(function() {
+            // create the image rotator
+            setInterval("rotateImages()", 2000);/*fazendo com que se repita varias veses com esse setInterval de 2 segundos */
+        });
+
+        function rotateImages() {
+            var oCurPhoto = $('#photoShow div.current');/*descobrimos a imagem current inicial*/
+            var oNxtPhoto = oCurPhoto.next();/* selecionamos a imagem seguinte a current inicial */
+            if (oNxtPhoto.length == 0)/*loop pegando a imagem inicial */
+                oNxtPhoto = $('#photoShow div:first');/* assim a próxima imagem será a primeira current */
+
+            oCurPhoto.removeClass('current').addClass('previous');/* removemos a classe inicial de current e add previous a ela */
+            /* aqui pegamos a proxima e deixamos invisível e colocamos no topo add a classe current 
+            depois de estar no topo, adicionamos novamente a opacidade para 1 */
+            oNxtPhoto.css({ opacity: 0.0 }).addClass('current').animate({ opacity: 1.0 }, 1000,
+                function() {
+                    oCurPhoto.removeClass('previous');
+                });
+        }
+    </script>
+<style type="text/css">
+    #photoShow {
+        height:400px;
+        width:400px;
+    }
+    #photoShow div {
+        position:absolute;
+        z-index: 0;
+    }
+    #photoShow div.previous {
+        z-index: 1;
+    }
+    #photoShow div.current {
+        z-index: 2;
+    }
+</style>
+</head>
+<body>
+    <h1><!-- imagens em cima das outras -->
+        jQuery-based Image Rotator</h1>
+    <div id="photoShow">
+        <div class="current">
+            <img src="images/Grass.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+        <div>
+            <img src="images/Leaf.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+        <div>
+            <img src="images/Spring.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+        <div>
+            <img src="images/Water.jpg" alt="Photo Gallery" width="400" height="400" class="gallery" />
+        </div>
+    </div>
+</body>
+</html>
