@@ -17,14 +17,29 @@
     /* função a ser chamada quando o documento estiver pronto */
     $( function(){
       $("#newsSection").accordion( { header: "h4"} ); /* pegue os items com o id newsSection e 
-      adicione a função accordion que vem dos arquivos do jquery-ui*/
-
-      /* accordion recebe links como header e paragrafos como seu conteúdo 
+      adicione a função accordion que vem dos arquivos do jquery-ui 
+      
+      accordion recebe links como header e paragrafos como seu conteúdo 
       mas como no nosso caso como usamos h4 ao invés de links temos que especificar
       no arguemto da função : { header: "h4"} */
 
-    });
+      setIntervak("rotateImages()", 2000);
 
+    });
+    /* LÓGICA PARA A ROTAÇÃO DE IMAGENS JÁ VISTA ANTERIORMENTE */
+    function rotateImages() {
+        var oCurPhoto = $('#photoShow div.current');/* pegando as div com a classe current */
+        var oNxtPhoto = oCurPhoto.next();/* pegando a proxima div alinhada */
+        if (oNxtPhoto.length == 0)/* length é o comprimento de elementos do array encontrado  se o seu tamanho é 0 encontramos a última div */
+            oNxtPhoto = $('#photoShow div:first');/* ao atingir o ultimo volta para o primeiro */
+
+        oCurPhoto.removeClass('current').addClass('previous');
+        /* função callback como terceiro argumento */
+        oNxtPhoto.css({ opacity: 0.0 }).addClass('current').animate({ opacity: 1.0 }, 1000,
+            function() {
+                oCurPhoto.removeClass('previous');
+            });
+        }
 
   </script>
 
@@ -54,15 +69,36 @@
               Josh Cambria pens this month's surfer journal. Check out his month-long surfing
               experience as he surfs up the coast from San Diego up to Ventura. Along the way
               he meets several celebrities and finds a new favorite board. <a href="lifestyle/journal.htm">
-                  Check it out</a>.</p>
+                  Check it out</a>.</p>                
           <img src="_images/fearless_small.jpg" width="200" height="68" alt="new board" />
           <h3>
               Check out our new board</h3>
           <p>
               Looking for a hot new board? <a href="gear/boards.htm">Check out</a> our new Fearless
-              board from legendary shaper Carl Benson.</p>
-          <img src="_images/ventura_01_thumb.jpg" alt="Todd" width="200" height="160" class="gallery" /><h3>
-              Photos anyone?</h3>
+             board from legendary shaper Carl Benson.</p>
+        
+        <!-- VIDEO 07.03 #Creating an Image Rotator  --> 
+        <div id="photoShow">
+          <div class="current">
+              <a href="lifestyle/photos.htm">
+                  <img src="_images/ventura_01_thumb.jpg" alt="Photo Gallery" width="200" height="160"
+                      class="gallery" /></a>
+          </div>
+          <div>
+              <a href="lifestyle/photos.htm">
+                  <img src="_images/ventura_02_thumb.jpg" alt="Photo Gallery" width="200" height="160"
+                      class="gallery" /></a></div>
+          <div>
+              <a href="lifestyle/photos.htm">
+                  <img src="_images/ventura_03_thumb.jpg" alt="Photo Gallery" width="200" height="160"
+                      class="gallery" /></a></div>
+          <div>
+              <a href="lifestyle/photos.htm">
+                  <img src="_images/ventura_04_thumb.jpg" alt="Photo Gallery" width="200" height="160"
+                      class="gallery" /></a></div>
+          </div> 
+        
+          <h3>Photos anyone?</h3>
           <p>
               Care to check out this month's featured photo gallery? <span class="clearLeft">Todd
                   Crampton</span> almost gets run over by wind surfers in Ventura and we are there!

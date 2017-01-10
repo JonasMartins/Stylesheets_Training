@@ -692,6 +692,29 @@ table#boardCompare thead th.name {
 	margin-left: 20px;
 }
 
+/* VIDEO 07.03 #Creating an Image Rotator */
+/* Posicionando todas as imagens uma acima da outra */
+#photoShow {
+    position:relative;
+    height:190px;
+    width:240px;
+    margin-left: auto;
+}
+/* um efeito de sobreposto sobre as imagens */
+
+#photoShow div {
+    position:absolute;
+    z-index: 0;
+}
+#photoShow div.previous {
+    z-index: 1;
+}
+#photoShow div.current {
+    z-index: 2;
+}
+
+
+
 .tooltipContent {
     position:absolute;
     display:none;
