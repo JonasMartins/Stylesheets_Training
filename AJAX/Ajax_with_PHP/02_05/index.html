@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax Zip Code</title>
+    <style>
+      #entry {
+        margin: 2em 1em;
+      }
+      #location {
+        margin: 1em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="entry">
+      Zip code: <input id="zipcode" type="text" name="zipcode" />
+      <button id="ajax-button" type="button">Submit</button>
+    </div>
+
+    <div id="location">
+    </div>
+
+    <script>
+    /* exemplo mostrado: http://maps.googleapis.com/maps/api/geocode/json?address=90210*/
+
+
+      // Google asks for all API users to sign up for an API key
+      // For simple tests, still works without an API key
+      var api = 'http://maps.googleapis.com/maps/api/geocode/json';
+
+      function findLocation() {
+        /* referenciando o id do input text */
+        var zipcode = document.getElementById('zipcode');
+        /* zipcode é o que for digitado pelo user, precisamos do value pois zipcode é 
+        o html e não o que foi digitado */
+        var url = api + '?address=' + zipcode.value;
+
+        /* PADRÃO */
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+        xhr.onreadystatechange = function () {
+
+          if(xhr.readyState < 4) {
+            showLoading();
+          }
+          if(xhr.readyState == 4 && xhr.status == 200) {
+            outputLocation(xhr.responseText);
+          }
+        };
+        xhr.send();
+      }
+      function showLoading(){
+        var target = document.getElementById('location');
+        target.innerHTML = 'Loading...';
+      }
+      function outputLocation(data) {
+        var target = document.getElementById('location');
+        /* convertendo de texto para json */
+        var json = JSON.parse(data);
+        /* traversing o json para pegar os dados necessários
+        o json original encontra-se em: http://maps.googleapis.com/maps/api/geocode/json?address=90210 */
+        var address = json.results[0].formatted_address;
+
+        target.innerHTML = address;
+      }
+
+      var button = document.getElementById ("ajax-button");
+      button.addEventListener("click", findLocation);
+    </script>
+
+  </body>
+</html>
