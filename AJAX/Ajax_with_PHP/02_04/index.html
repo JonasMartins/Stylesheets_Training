@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ajax Text</title>
+  </head>
+  <body>
+
+    <div id="main">
+      This is the original text when the page first loads.
+    </div>
+
+    <button id="ajax-button" type="button">Update content with Ajax</button>
+
+    <script>
+      function replaceText() {
+        var target = document.getElementById("main");
+        var xhr = new XMLHttpRequest();
+        /* true é para uma requisição assíncrona */
+        xhr.open('GET', 'new_content.txt', true);
+        /* onreadystatechange é a função padrão para tratar erros */
+        xhr.onreadystatechange = function () {
+          /* este log sreve para armazenar no console do browser onde podemos
+          ver a evolução da requisição vindo de 2 e passando para 4 e como o innerHTML
+          muda o texto. */
+          console.log('readyState: ' + xhr.readyState);
+          if(xhr.readyState == 2) {
+            /* innerHTML é a substituição do elemento, sabendo que target é o div da pagina */
+            target.innerHTML = 'Loading...';
+          }
+          if(xhr.readyState == 4 && xhr.status == 200) {
+            /* innerHTML é a substituição do elemento, sabendo que target é o div da pagina */
+            target.innerHTML = xhr.responseText;
+          }
+        }
+        xhr.send();
+      }
+
+      var button = document.getElementById ("ajax-button");
+      /* sempre que o evento click é executado a função replacetext é executada */
+      button.addEventListener("click", replaceText);
+    </script>
+
+  </body>
+</html>
