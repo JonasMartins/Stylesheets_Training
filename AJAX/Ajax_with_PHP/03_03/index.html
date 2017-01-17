@@ -28,7 +28,8 @@
 							isso vai apersentar os dados brutos do json, sem fazer qq distinção
 							apenas as strings e os parenteses da mesma forma que está no  arquivo e mostrat na pagina
           	 */
-
+          	/* transformando en json, mesmo que o arquivo anterior seja json 
+          	ele na verdade foi transfirmadno em simples texto e enviado*/
             var json = JSON.parse(xhr.responseText);
 
             target.innerHTML = json.long;
